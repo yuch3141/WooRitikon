@@ -1,0 +1,35 @@
+
+# 쿼리메소드
+
+	: 스프링 JPA에서 복잡한 jpql을 대신 처리하는 메소드
+	  JPQL은 테이블로 검색하는 것이 엔티티에서 검색하는 것이다.
+		
+	ex) findBoardByTitle() : Board 엔티티에서 title 값으로 검색
+		findByTitle() : 엔티티명은 생략 가능
+		
+
+# 쿼리 메소드 유형
+-------------------------------------------------------------------
+생성되는 SQL									쿼리 메소드
+-------------------------------------------------------------------
+WHERE lastname = ?1							findByLastname("~")
+WHERE lastname <> ?1						findByLastnameNot
+WHERE lastname = ?1	 and firstname=?2		findByLastnameAndFirstname
+WHERE age < ?1								findByAgeLessThan
+WHERE age <= ?1
+WHERE age > ?1
+WHERE age >= ?1
+WHERE age is null
+WHERE age not is null						findByAgeIsNotNull
+WHERE firstname like ?1						findByFirstnameLike
+WHERE firstname like '%'||?1||'%'			findByFirstnameContaining
+WHERE age=?1 ORDER BY lastname desc			findByAgeOrderByLastnameDesc
+WHERE age in ?1
+
+
+
+
+
+[참고]	SELECT  컬럼명들
+		FROM	테이블명
+		WHERE	조건식

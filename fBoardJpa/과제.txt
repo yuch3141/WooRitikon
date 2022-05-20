@@ -1,0 +1,7 @@
+
+	- Framework	:	SpringBoot
+	- view		:	Thymeleaf
+	- URL방식		:	Restful
+	- DB연결		:	JPA
+	
+	Employee 활용한 연습
